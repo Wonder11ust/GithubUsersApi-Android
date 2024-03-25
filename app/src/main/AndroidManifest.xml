@@ -15,6 +15,15 @@
         android:theme="@style/Theme.GithubUsersApi"
         tools:targetApi="31">
         <activity
+            android:name=".datastore.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.FavoriteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.insert.FavoriteAddActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.DetailActivity"
             android:exported="false" />
         <activity

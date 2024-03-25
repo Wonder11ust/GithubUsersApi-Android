@@ -39,16 +39,7 @@ class UserAdapter:ListAdapter<UserItem,UserAdapter.UserViewHolder>(DIFF_CALLBACK
                 }
             }
 
-//    class UserViewHolder(val binding: UserItemBinding):RecyclerView.ViewHolder(binding.root){
-//        @SuppressLint("SuspiciousIndentation")
-//        fun bind(user:UserItem){
-//        binding.tvItemName.text = "${user.login}"
-//
-//            Glide.with(binding.root.context)
-//                .load(user.avatarUrl)
-//                .into(binding.profileImage)
-//        }
-//    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val binding = UserItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)

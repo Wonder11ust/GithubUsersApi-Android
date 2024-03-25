@@ -1,17 +1,24 @@
 package com.example.githubusersapi.ui
 
+import android.app.Application
 import android.util.Log
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.githubusersapi.data.response.DetailUserItem
 import com.example.githubusersapi.data.response.DetailUserResponse
 import com.example.githubusersapi.data.retrofit.ApiConfig
+import com.example.githubusersapi.database.Favorite
+import com.example.githubusersapi.database.FavoriteRepository
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DetailViewModel:ViewModel() {
+class DetailViewModel(application: Application):AndroidViewModel(application) {
+
+    private val mFavoriteRepository:FavoriteRepository = FavoriteRepository(application)
+
     private val _detailUser = MutableLiveData<DetailUserResponse?>()
      val detailUser:LiveData<DetailUserResponse?> = _detailUser
 
@@ -47,4 +54,8 @@ class DetailViewModel:ViewModel() {
             }
         })
     }
+
+
+
+
 }
